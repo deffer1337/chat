@@ -32,7 +32,7 @@ class WSChat:
         """
         for client, id in self.clients.items():
             try:
-                if not message['id'] == id or message['id'] and id == to:
+                if message['id'] != id and (not to or id == to):
                     await client.send_json(message)
             except ConnectionResetError:
                 pass
