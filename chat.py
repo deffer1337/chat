@@ -17,7 +17,7 @@ class WSChat:
 
     async def broadcast(self, message: Dict, to: str = None) -> None:
         """
-        :param message: Message which need send and looks like
+        :param message: Message which need send
         :param to: When need send private message
         """
         for client, id in self.clients.items():
