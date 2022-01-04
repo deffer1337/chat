@@ -18,16 +18,6 @@ class WSChat:
     async def broadcast(self, message: Dict, to: str = None) -> None:
         """
         :param message: Message which need send and looks like
-        `{'mtype': 'INIT', 'id': 'ABCDEFGH'}` — initialization, sent when the user logs in
-            - `id`: user id
-        `{'mtype': 'TEXT', 'id': 'IDFROM', 'to': 'IDTO', 'text': 'message text'}` — send message
-            - `id`: sender id
-            - `to`: reciver id
-            - `text`: message text
-        `{'mtype': 'MSG', 'id': 'IDFROM', 'text': 'message'}` — message with text `text` from user `id`
-        `{'mtype': 'DM', 'id': 'IDFROM', 'text': 'message'}` — «private» message with text `text` from user `id`
-        `{'mtype': 'USER_ENTER', 'id': 'USERID'}` — service message «User `id` entered the chat»
-        `{'mtype': 'USER_LEAVE', 'id': 'USERID'}` — service message «User `id` leaved the chat»
         :param to: When need send private message
         """
         for client, id in self.clients.items():
